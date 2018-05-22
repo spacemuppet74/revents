@@ -1,16 +1,17 @@
 import React, { Component } from "react";
-import { List, Image, ImageGroup } from "semantic-ui-react";
+import { List, Image } from "semantic-ui-react";
 
 class EventsListAttendee extends Component {
   state = {};
   render() {
+    const { attendee } = this.props
     return (
       <List.Item>
         <Image
           as="a"
           size="mini"
           circular
-          src="https://randomuser.me/portraits/women/42.jpg"
+          src={attendee.photoURL}
         />
       </List.Item>
     );

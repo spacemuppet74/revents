@@ -6,6 +6,7 @@ import EventsListAttendee from "../EventsList/EventsListAttendee";
 class EventsListItem extends Component {
   state = {};
   render() {
+    const { event } = this.props
     return (
       <Segment.Group>
         <Segment>
@@ -14,12 +15,12 @@ class EventsListItem extends Component {
               <Item.Image
                 size="tiny"
                 circular
-                src="https://randomuser.me/portraits/women/42.jpg"
+                src={event.hostPhotoURL}
               />
               <Item.Content>
-                <Item.Header as="a">Event Title</Item.Header>
+                <Item.Header as="a">{event.title}</Item.Header>
                 <Item.Description>
-                  Hosted by <a>hosted by</a>
+                  Hosted by <a>{event.hostedBy}</a>
                 </Item.Description>
               </Item.Content>
             </Item>
@@ -27,20 +28,18 @@ class EventsListItem extends Component {
         </Segment>
         <Segment>
           <span>
-            <Icon name="clock" /> date |
-            <Icon name="marker" /> time
+            <Icon name="clock" /> {event.date}
+            <Icon name="marker" /> {event.venue}
           </span>
         </Segment>
         <Segment secondary>
           <List horizontal>
-            <EventsListAttendee />
-            <EventsListAttendee />
-            <EventsListAttendee />
-            <EventsListAttendee />
+            {event.attendees.map(attendee => <EventsListAttendee attendee={attendee} key={attendee.id} />)}
+
           </List>
         </Segment>
         <Segment clearing>
-          <span>Description will go here</span>
+          <span>{event.description}</span>
           <Button as="a" color="teal" floated="right" content="View" />
         </Segment>
       </Segment.Group>
