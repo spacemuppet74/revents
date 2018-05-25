@@ -1,10 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-<<<<<<< HEAD
-import { BrowserRouter } from 'react-router-dom';
-=======
 import { BrowserRouter } from "react-router-dom";
->>>>>>> 9c48282a432cf718555711c11c267dfa1f4eba63
 import "semantic-ui-css/semantic.min.css";
 import "./index.css";
 import App from "./app/layout/App";
@@ -17,11 +13,6 @@ const store = configureStore();
 
 const render = () => {
   ReactDOM.render(
-<<<<<<< HEAD
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>, el);
-=======
     <Provider store={store}>
       <BrowserRouter>
         <App />
@@ -29,7 +20,6 @@ const render = () => {
     </Provider>,
     el
   );
->>>>>>> 9c48282a432cf718555711c11c267dfa1f4eba63
 };
 
 if (module.hot) {

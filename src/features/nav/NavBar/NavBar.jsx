@@ -1,13 +1,8 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
-import { NavLink, Link } from 'react-router-dom';
-import { Container, Menu, Button } from "semantic-ui-react";
-=======
 import { Menu, Container, Button } from "semantic-ui-react";
 import { NavLink, Link, withRouter } from "react-router-dom";
 import SignedOutMenu from "../Menus/SignedOutMenu";
 import SignedInMenu from "../Menus/SignedInMenu";
->>>>>>> 9c48282a432cf718555711c11c267dfa1f4eba63
 
 class NavBar extends Component {
   state = {
@@ -32,26 +27,6 @@ class NavBar extends Component {
     return (
       <Menu inverted fixed="top">
         <Container>
-<<<<<<< HEAD
-          <Menu.Item header as={Link} to="/">
-            <img src="assets/logo.png" alt="logo" />
-            Re-vents
-          </Menu.Item>
-          <Menu.Item as={NavLink} name="Events" to="/events" />
-          <Menu.Item as={NavLink} name="People" to="/people" />
-          <Menu.Item>
-            <Button floated="right" positive inverted content="Create Event" as={Link} to="/createEvent" />
-          </Menu.Item>
-          <Menu.Item position="right">
-            <Button basic inverted content="Login" />
-            <Button
-              basic
-              inverted
-              content="Sign Out"
-              style={{ marginLeft: "0.5em" }}
-            />
-          </Menu.Item>
-=======
           <Menu.Item as={Link} to="/" header>
             <img src="/assets/logo.png" alt="logo" />
             Re-vents
@@ -77,9 +52,8 @@ class NavBar extends Component {
           {authenticated ? (
             <SignedInMenu signOut={this.handleSignOut} />
           ) : (
-            <SignedOutMenu signIn={this.handleSignIn} />
-          )}
->>>>>>> 9c48282a432cf718555711c11c267dfa1f4eba63
+              <SignedOutMenu signIn={this.handleSignIn} />
+            )}
         </Container>
       </Menu>
     );

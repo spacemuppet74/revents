@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-
-const SettingsNav = () => {
-  return (
-    <div>
-      <h1>Settings Nav</h1>
-    </div>
-  )
-}
-
-export default SettingsNav;
-=======
 import React from 'react';
 import { Grid, Menu, Header } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom'
@@ -40,4 +27,3 @@ const SettingsNav = () => {
 };
 
 export default SettingsNav;
->>>>>>> 9c48282a432cf718555711c11c267dfa1f4eba63
