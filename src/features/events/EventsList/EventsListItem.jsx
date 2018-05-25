@@ -6,17 +6,13 @@ import EventsListAttendee from "../EventsList/EventsListAttendee";
 class EventsListItem extends Component {
   state = {};
   render() {
-    const { event } = this.props
+    const { event, onEventEdit, deleteEvent } = this.props;
     return (
       <Segment.Group>
         <Segment>
           <Item.Group>
             <Item>
-              <Item.Image
-                size="tiny"
-                circular
-                src={event.hostPhotoURL}
-              />
+              <Item.Image size="tiny" circular src={event.hostPhotoURL} />
               <Item.Content>
                 <Item.Header as="a">{event.title}</Item.Header>
                 <Item.Description>
@@ -34,13 +30,28 @@ class EventsListItem extends Component {
         </Segment>
         <Segment secondary>
           <List horizontal>
-            {event.attendees && event.attendees.map(attendee => <EventsListAttendee attendee={attendee} key={attendee.id} />)}
-
+            {event.attendees &&
+              event.attendees.map(attendee => (
+                <EventsListAttendee attendee={attendee} key={attendee.id} />
+              ))}
           </List>
         </Segment>
         <Segment clearing>
           <span>{event.description}</span>
-          <Button as="a" color="teal" floated="right" content="View" />
+          <Button
+            as="a"
+            color="teal"
+            floated="right"
+            content="View"
+            onClick={onEventEdit(event)}
+          />
+          <Button
+            as="a"
+            color="red"
+            floated="right"
+            content="Delete"
+            onClick={deleteEvent(event.id)}
+          />
         </Segment>
       </Segment.Group>
     );
