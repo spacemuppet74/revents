@@ -10,8 +10,8 @@ import HomePage from "../../features/home/HomePage";
 
 import TestArea from "../../features/testarea/TestArea";
 
-import EventDashboard from "../../features/events/EventsDashboard/EventsDashboard";
-import PeopleDashboard from '../../features/user/PeopleDashboard/PeopleDashboard'
+import EventDashboard from "../../features/event/EventDashboard/EventDashboard";
+import PeopleDashboard from "../../features/user/PeopleDashboard/PeopleDashboard";
 
 class App extends Component {
   render() {
