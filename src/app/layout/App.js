@@ -12,11 +12,13 @@ import TestArea from "../../features/testarea/TestArea";
 
 import EventDashboard from "../../features/event/EventDashboard/EventDashboard";
 import PeopleDashboard from "../../features/user/PeopleDashboard/PeopleDashboard";
+import ModalManager from "../../features/modals/ModalManager";
 
 class App extends Component {
   render() {
     return (
       <Fragment>
+        <ModalManager />
         <Switch>
           <Route exact path="/" component={HomePage} />
         </Switch>
